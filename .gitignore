@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+frantend/node_modules/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.env
+
+# MacOS
+.DS_Store
+
+# Django
+db.sqlite3
+error.html
+trace.txt
