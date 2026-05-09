@@ -1,11 +1,13 @@
 import json
+import os
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from google import genai
 from google.genai import types
 
-# અહી તમારી ફ્રી Google Gemini API કી નાખો (aistudio.google.com પરથી મળશે)
-client = genai.Client(api_key="AIzaSyCiFRHE7SRXYRiQICORr4ZAcYqUEj2mWKc")
+# સિક્યોરિટી માટે હવે આપણે આને Render માંથી ખેંચીશું (Env Variables)
+api_key = os.environ.get("GEMINI_API_KEY")
+client = genai.Client(api_key=api_key)
 
 @csrf_exempt
 def upload_image(request):
