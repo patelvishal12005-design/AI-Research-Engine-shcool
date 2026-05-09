@@ -55,7 +55,7 @@ function App() {
     formData.append('standard', standard);
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/upload/', formData, {
+      const response = await axios.post('https://backend-ai-engine.onrender.com/upload/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -79,7 +79,7 @@ function App() {
     setChatLoading(true);
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/ask/', {
+      const response = await axios.post('https://backend-ai-engine.onrender.com/ask/', {
         question: chatInput
       });
       setChatHistory((prev) => [...prev, { role: 'ai', content: response.data.answer }]);
